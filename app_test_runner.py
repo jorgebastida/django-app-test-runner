@@ -45,10 +45,14 @@ from django.core.management import call_command
         sys.path.insert(0, parent_dir)
 
     settings.configure(**{
-        "DATABASE_ENGINE": options.DATABASE_ENGINE,
-        "DATABASE_NAME": options.DATABASE_NAME,
-        "DATABASE_USER": options.DATABASE_USER,
-        "DATABASE_PASSWORD": options.DATABASE_PASSWORD,
+        "DATABASES": {
+            'default': {
+                "ENGINE": 'django.db.backends.%s' % options.DATABASE_ENGINE,
+                "NAME": options.DATABASE_NAME,
+                "USER": options.DATABASE_USER,
+                "PASSWORD": options.DATABASE_PASSWORD,
+            }
+        },
         "SITE_ID": options.SITE_ID,
         "ROOT_URLCONF": "",
         "TEMPLATE_LOADERS": (
