@@ -71,7 +71,7 @@ from django.core.management import call_command
             app_name,
         ),
     })
-    call_command("test")
+    call_command("test", *args[1:])
 
 if __name__ == "__main__":
     main()
