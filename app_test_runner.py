@@ -8,7 +8,8 @@ from optparse import OptionParser
 from django.conf import settings
 from django.core.management import call_command
 
-    def main():
+
+def main():
     """
     The entry point for the script. This script is fairly basic. Here is a
     quick example of how to use it::
